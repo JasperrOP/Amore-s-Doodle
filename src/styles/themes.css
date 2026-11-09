@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+:root, [data-theme="navy"] {
+  --primary: #14213D; --on-primary: #F4EDE0;
+  --bg: #F4EDE0; --surface: #FFFBF2; --ink: #14213D;
+  --muted: #555966; --line: #DCD2BE; --paper: #FFFDF7; --danger: #9B2C2C;
+}
+[data-theme="forest"] {
+  --primary: #1F3D2B; --on-primary: #E8DCC4;
+  --bg: #E8DCC4; --surface: #F6EFDF; --ink: #1F3D2B;
+  --muted: #525647; --line: #CFC2A5; --paper: #FBF7EB; --danger: #8B2E2E;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-tap-highlight-color: transparent; overscroll-behavior: none;
+}
+h1, h2, h3, .serif { font-family: Georgia, "Times New Roman", serif; letter-spacing: .01em; }
+
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:.4rem; min-height:44px; padding:0 1.1rem;
+  border-radius:999px; background:var(--primary); color:var(--on-primary); font-weight:600; border:0; cursor:pointer; }
+.btn:disabled { opacity:.5; }
+.btn:focus-visible, .input:focus-visible, button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--primary); outline-offset: 2px;
+}
+.btn-ghost { background:transparent; color:var(--ink); border:1.5px solid var(--line); }
+.btn-danger { background:var(--danger); color:#fff; }
+.card { background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:1rem; }
+.input { width:100%; min-height:44px; padding:0 .9rem; border-radius:14px; border:1.5px solid var(--line);
+  background:var(--surface); color:var(--ink); font-size:16px; outline:none; }
+.input:focus { border-color: var(--primary); }
+.muted { color: var(--muted); }
+.page { padding: calc(env(safe-area-inset-top) + 1rem) 1rem 1rem; max-width: 640px; margin: 0 auto; }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+.canvas-surface { touch-action: none; }
